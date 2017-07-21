@@ -11,18 +11,7 @@ var app = express();
 // Using sessions
 app.use(session({secret: 'todotopsecret'}));
 
-//var list = [];
-//app.get('/', function (req, res) {
-//
-//    var newItem = req.query.listItem;
-//    if (newItem != undefined && newItem != "")
-//        list.push(newItem);
-//    res.render('list.ejs', {
-//        myListItems: list
-//    });
-//});
-
-// Create an empty list (using an array here)
+// Create an empty todo-list (using an array here)
 app.use(function(req, res, next) {
     if(typeof(req.session.todolist) == 'undefined') {
         req.session.todolist = [];
